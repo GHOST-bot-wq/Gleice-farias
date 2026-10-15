@@ -1,0 +1,275 @@
+/* ============================================================
+   Treatments Section Styles — Luxury Editorial
+   ============================================================ */
+
+.treatments {
+  border-top: 1px solid var(--border-sand);
+  border-bottom: 1px solid var(--border-sand);
+}
+
+.treatments__header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: clamp(40px, 6vw, 70px);
+}
+
+@media (min-width: 992px) {
+  .treatments__header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.treatments__header-main {
+  max-width: 600px;
+}
+
+.treatments__title {
+  color: var(--graphite);
+}
+
+.treatments__title em {
+  color: var(--deep-brown);
+}
+
+.treatments__subtitle {
+  max-width: 460px;
+  font-size: 1.02rem;
+  color: var(--graphite-muted);
+  line-height: 1.7;
+}
+
+/* ── Grade Editorial de Tratamentos ── */
+.treatments__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3.5vw, 36px);
+}
+
+@media (min-width: 768px) {
+  .treatments__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .treatments__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Card Editorial ── */
+.treatment-card {
+  background-color: var(--warm-white);
+  border: 1px solid var(--border-sand);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.treatment-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--aged-gold);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Imagem no card */
+.treatment-card__image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--sand-beige);
+}
+
+.treatment-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.treatment-card:hover .treatment-card__img {
+  transform: scale(1.04);
+}
+
+.treatment-card__image-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: rgba(41, 39, 36, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  border-radius: 1px;
+}
+
+.treatment-card__image-badge span {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  font-weight: 600;
+}
+
+/* Conteúdo interno do card */
+.treatment-card__content {
+  padding: clamp(24px, 3vw, 32px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.treatment-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.treatment-card__number {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--aged-gold);
+  font-weight: 500;
+}
+
+.treatment-card__category {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--graphite-light);
+  font-weight: 600;
+}
+
+.treatment-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: var(--graphite);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.treatment-card__description {
+  font-size: 0.92rem;
+  color: var(--graphite-muted);
+  line-height: 1.66;
+  margin-bottom: 20px;
+}
+
+/* Benefícios */
+.treatment-card__benefits {
+  margin-bottom: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-sand);
+}
+
+.treatment-card__benefits-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--aged-gold);
+  margin-bottom: 8px;
+}
+
+.treatment-card__benefits ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.treatment-card__benefits li {
+  font-size: 0.82rem;
+  color: var(--graphite-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.treatment-card__bullet {
+  color: var(--aged-gold);
+  font-size: 0.68rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* Nota */
+.treatment-card__note {
+  margin-top: auto;
+  padding: 10px 12px;
+  background-color: var(--sand-beige-light);
+  border-radius: 2px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.treatment-card__note span {
+  color: var(--aged-gold);
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+
+.treatment-card__note small {
+  font-size: 0.76rem;
+  color: var(--graphite-muted);
+  line-height: 1.45;
+}
+
+/* Rodapé / Link */
+.treatment-card__footer {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-sand);
+}
+
+.treatment-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--deep-brown);
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.treatment-card__arrow {
+  color: var(--aged-gold);
+  font-size: 1.1rem;
+  transition: transform var(--transition-fast);
+}
+
+.treatment-card__link:hover {
+  color: var(--aged-gold);
+}
+
+.treatment-card__link:hover .treatment-card__arrow {
+  transform: translateX(4px);
+}
+
+/* Disclaimer ético */
+.treatments__disclaimer {
+  margin-top: clamp(36px, 5vw, 56px);
+  text-align: center;
+}
+
+.treatments__disclaimer p {
+  font-size: 0.82rem;
+  color: var(--graphite-light);
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

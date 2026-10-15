@@ -1,0 +1,331 @@
+/* ============================================================
+   Hero Section — Luxury Editorial Beauty
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding-top: clamp(100px, 14vw, 150px);
+  padding-bottom: clamp(60px, 8vw, 100px);
+  background-color: var(--ivory);
+  overflow: hidden;
+}
+
+/* Fundo ambiente sutil */
+.hero__bg-ambient {
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(circle, rgba(210, 180, 119, 0.12) 0%, rgba(250, 248, 243, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 6vw, 70px);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .hero__inner {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+}
+
+/* ── Conteúdo Tipográfico ── */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__eyebrow-wrap {
+  margin-bottom: 18px;
+}
+
+.hero__title {
+  color: var(--graphite);
+  font-size: clamp(2.35rem, 4.4vw, 4.1rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.hero__title em {
+  color: var(--deep-brown);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero__br-desktop {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .hero__br-desktop {
+    display: inline;
+  }
+}
+
+.hero__description {
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  color: var(--graphite-muted);
+  max-width: 540px;
+  margin-bottom: 36px;
+  line-height: 1.74;
+}
+
+/* ── Botões de Ação ── */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.hero__cta-main {
+  min-width: 220px;
+}
+
+.hero__cta-sec {
+  min-width: 200px;
+}
+
+/* ── Selos Editoriais ── */
+.hero__editorial-pills {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-gold-subtle);
+  max-width: 520px;
+}
+
+.hero__pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite-muted);
+  font-weight: 500;
+}
+
+.hero__pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--aged-gold);
+}
+
+.hero__pill-separator {
+  width: 1px;
+  height: 14px;
+  background-color: var(--sand-beige);
+}
+
+/* ── Coluna de Mídia / Fotografia de Gleice Farias ── */
+.hero__media-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image-composition {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+}
+
+.hero__image-frame {
+  position: relative;
+  z-index: 2;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+  background-color: var(--sand-beige-light);
+  aspect-ratio: 4 / 5;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero__image-composition:hover .hero__image {
+  transform: scale(1.025);
+}
+
+.hero__image-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(41, 39, 36, 0) 70%,
+    rgba(68, 55, 45, 0.25) 100%
+  );
+  pointer-events: none;
+}
+
+/* Moldura decorativa deslocada */
+.hero__frame-accent {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  border: 1px solid var(--aged-gold);
+  opacity: 0.35;
+  border-radius: 4px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Card Flutuante de Assinatura */
+.hero__card-floating {
+  position: absolute;
+  bottom: -24px;
+  left: -20px;
+  z-index: 3;
+  background-color: var(--warm-white);
+  border: 1px solid var(--border-gold-subtle);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-medium);
+  border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+  .hero__card-floating {
+    left: 8px;
+    bottom: -16px;
+    padding: 10px 14px;
+  }
+}
+
+.hero__card-monogram {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--aged-gold);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-gold-subtle);
+  background: var(--ivory);
+}
+
+.hero__card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__card-text strong {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--graphite);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.hero__card-text span {
+  font-size: 0.68rem;
+  color: var(--aged-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
+
+/* ── Indicador de Rolagem ── */
+.hero__scroll {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .hero__scroll {
+    display: block;
+  }
+}
+
+.hero__scroll-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.hero__scroll-link:hover {
+  opacity: 1;
+}
+
+.hero__scroll-text {
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--graphite-muted);
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 38px;
+  background: var(--sand-beige);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__scroll-ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: var(--aged-gold);
+  animation: scrollDown 2.2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(250%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(250%);
+    opacity: 0;
+  }
+}

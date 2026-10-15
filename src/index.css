@@ -1,0 +1,431 @@
+/* ============================================================
+   GLEICE FARIAS · ESTÉTICA FACIAL
+   Conceito: LUXURY EDITORIAL BEAUTY
+   Paleta:
+     Marfim: #FAF8F3
+     Branco quente: #FFFFFF
+     Bege areia: #E9E0D4
+     Champagne: #D2B477
+     Dourado envelhecido: #AA8747
+     Marrom profundo: #44372D
+     Grafite quente: #292724
+   Tipografia:
+     Serif: Cormorant Garamond
+     Sans: Manrope
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Cores da Marca */
+  --ivory: #FAF8F3;
+  --warm-white: #FFFFFF;
+  --sand-beige: #E9E0D4;
+  --sand-beige-light: #F4EFEA;
+  --champagne: #D2B477;
+  --champagne-light: #F5EEDB;
+  --aged-gold: #AA8747;
+  --aged-gold-dark: #8E6E34;
+  --deep-brown: #44372D;
+  --deep-brown-dark: #322820;
+  --graphite: #292724;
+  --graphite-muted: #5E5A54;
+  --graphite-light: #8E8A84;
+
+  /* Bordas e Divisores */
+  --border-gold-subtle: rgba(170, 135, 71, 0.22);
+  --border-sand: rgba(233, 224, 212, 0.85);
+  --border-deep: rgba(68, 55, 45, 0.12);
+
+  /* Sombras Elegantes */
+  --shadow-soft: 0 10px 30px -10px rgba(68, 55, 45, 0.06);
+  --shadow-medium: 0 20px 45px -15px rgba(68, 55, 45, 0.10);
+  --shadow-elevated: 0 30px 60px -20px rgba(68, 55, 45, 0.16);
+
+  /* Tipografia */
+  --font-serif: 'Cormorant Garamond', Garamond, 'Times New Roman', serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Espaçamentos e Layout */
+  --container-max: 1240px;
+  --container-padding: clamp(20px, 4.5vw, 64px);
+  --section-padding: clamp(72px, 8vw, 130px);
+  --section-padding-sm: clamp(48px, 6vw, 90px);
+
+  /* Transições Refinadas */
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.22s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--ivory);
+  color: var(--graphite);
+  line-height: 1.68;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── Scrollbar de Luxo ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sand-beige);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--champagne);
+}
+
+/* ── Seleção de Texto ── */
+::selection {
+  background: var(--sand-beige);
+  color: var(--deep-brown);
+}
+
+/* ── Foco Acessível ── */
+:focus-visible {
+  outline: 2px solid var(--aged-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── Tipografia Base ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--graphite);
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 4.8vw, 4.4rem);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+}
+
+p {
+  color: var(--graphite-muted);
+  font-size: 1rem;
+  line-height: 1.72;
+}
+
+em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+}
+
+/* ── Container Utilitário ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* ── Detalhes Decorativos Editoriais ── */
+.gold-line {
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: var(--aged-gold);
+  margin-top: 14px;
+  margin-bottom: 22px;
+}
+
+.gold-line--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--aged-gold);
+}
+
+.eyebrow--light {
+  color: var(--champagne);
+}
+
+/* ── Botões Premium ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 34px;
+  background-color: var(--graphite);
+  color: var(--ivory);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid var(--graphite);
+  border-radius: 0;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: var(--aged-gold);
+  border-color: var(--aged-gold);
+  color: var(--warm-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(170, 135, 71, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled,
+.btn-primary[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: var(--graphite);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid var(--graphite);
+  border-radius: 0;
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background-color: var(--sand-beige-light);
+  border-color: var(--aged-gold);
+  color: var(--deep-brown);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 34px;
+  background-color: var(--aged-gold);
+  color: var(--warm-white);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid var(--aged-gold);
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-gold:hover {
+  background-color: var(--deep-brown);
+  border-color: var(--deep-brown);
+  color: var(--ivory);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -8px rgba(68, 55, 45, 0.35);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: var(--aged-gold);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 1px solid var(--aged-gold);
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--aged-gold);
+  color: var(--warm-white);
+  transform: translateY(-2px);
+}
+
+/* ── Estilos de Seções ── */
+.section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+.section--sm {
+  padding: var(--section-padding-sm) 0;
+}
+
+.section--ivory {
+  background-color: var(--ivory);
+}
+
+.section--sand {
+  background-color: var(--sand-beige-light);
+}
+
+.section--white {
+  background-color: var(--warm-white);
+}
+
+.section--dark {
+  background-color: var(--deep-brown);
+  color: var(--ivory);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3 {
+  color: var(--warm-white);
+}
+
+.section--dark p {
+  color: rgba(250, 248, 243, 0.82);
+}
+
+/* ── Divisores Elegantes ── */
+.luxury-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--border-gold-subtle) 30%,
+    var(--border-gold-subtle) 70%,
+    transparent 100%
+  );
+}
+
+/* ── Animações Sutis e Naturais ── */
+@keyframes editorialFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editorialFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: editorialFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: editorialFadeIn 0.75s ease-out both;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.22s; }
+.delay-3 { animation-delay: 0.35s; }
+.delay-4 { animation-delay: 0.5s; }
+.delay-5 { animation-delay: 0.65s; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Utilitário para ocultar em mobile se necessário */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}

@@ -1,0 +1,114 @@
+.faq__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.faq__header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  position: sticky;
+  top: 120px;
+}
+
+.faq.is-visible .faq__header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq__title {
+  font-size: clamp(1.9rem, 2.8vw, 2.8rem);
+  font-weight: 300;
+  color: var(--graphite);
+  line-height: 1.15;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.faq__title em { font-style: italic; color: var(--gold); }
+
+.faq__subtitle {
+  font-size: 0.88rem;
+  color: var(--graphite-muted);
+  line-height: 1.7;
+}
+
+/* ── Lista ── */
+.faq__list {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s;
+}
+
+.faq.is-visible .faq__list {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Item ── */
+.faq-item {
+  border-bottom: 1px solid var(--border-nude);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid var(--border-nude);
+}
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--graphite);
+  transition: color var(--transition-fast);
+}
+
+.faq-item__question:hover {
+  color: var(--gold);
+}
+
+.faq-item__icon {
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform var(--transition-smooth);
+}
+
+.faq-item.is-open .faq-item__icon {
+  transform: rotate(180deg);
+}
+
+/* ── Answer ── */
+.faq-item__answer {
+  padding-bottom: 24px;
+}
+
+.faq-item__answer[hidden] {
+  display: none;
+}
+
+.faq-item__answer p {
+  font-size: 0.9rem;
+  color: var(--graphite-muted);
+  line-height: 1.8;
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .faq__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .faq__header { position: static; }
+}
